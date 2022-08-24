@@ -25,14 +25,15 @@ namespace DesafioFundamentos.Models
         public void RemoverVeiculo(double precoInicial, double precoPorHora)
         {
             // Pedir para o usuário digitar a placa e armazenar na variável placa
-            Console.WriteLine("Digite a placa do veículo para remover:");
+            Console.Write("Digite a placa do veículo para remover: ");
             string placa = Console.ReadLine();
+            Console.WriteLine();
 
             // Verifica se o veículo existe
             if (veiculos.Any(x => x.ToUpper() == placa.ToUpper()))
             {
                 // TODO: Pedir para o usuário digitar a quantidade de horas que o veículo permaneceu estacionado,
-                Console.WriteLine("Digite a quantidade de horas que o veículo permaneceu estacionado:");
+                Console.Write("Digite a quantidade de horas que o veículo permaneceu estacionado: ");
                 double horas = Convert.ToDouble(Console.ReadLine());
 
                 // TODO: Realizar o seguinte cálculo: "precoInicial + precoPorHora * horas" para a variável valorTotal                
@@ -40,6 +41,7 @@ namespace DesafioFundamentos.Models
 
                 // TODO: Remover a placa digitada da lista de veículos
                 veiculos.Remove(placa);
+                Console.WriteLine();
 
                 Console.WriteLine($"O veículo {placa} foi removido e o preço total foi de: R$ {valorTotal}");
             }
@@ -54,16 +56,15 @@ namespace DesafioFundamentos.Models
             {
                 Console.WriteLine("Os veículos estacionados são:");
                 // TODO: Realizar um laço de repetição, exibindo os veículos estacionados
-                foreach(var veiculo in veiculos)
+                for(int i =0; i < veiculos.Count; i++)
                 {
-                    //faça um for para colocar a posição e n a quantiade total de veiculos
-                    Console.WriteLine($"Veículo  Placa: {veiculo[]}");
+                  //faça um for para colocar a posição e n a quantiade total de veiculos
+                    Console.WriteLine($"Veículo: {i + 1}  Placa: {veiculo[i]}");
                 }
-            }
-            else
-            {
+             }
+            else            
                 Console.WriteLine("Não há veículos estacionados.");
-            }
+            
         }
     }
 }
