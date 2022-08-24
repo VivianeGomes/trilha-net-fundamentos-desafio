@@ -44,9 +44,7 @@ namespace DesafioFundamentos.Models
                 Console.WriteLine($"O veículo {placa} foi removido e o preço total foi de: R$ {valorTotal}");
             }
             else
-            {
-                Console.WriteLine("Desculpe, esse veículo não está estacionado aqui. Confira se digitou a placa corretamente");
-            }
+                Console.WriteLine($"Deculpe, a placa {placa} não existe!");
         }
 
         public void ListarVeiculos()
@@ -58,7 +56,8 @@ namespace DesafioFundamentos.Models
                 // TODO: Realizar um laço de repetição, exibindo os veículos estacionados
                 foreach(var veiculo in veiculos)
                 {
-                    Console.WriteLine($"Veículo[{veiculos.Count}] Placa: {veiculo}");
+                    //faça um for para colocar a posição e n a quantiade total de veiculos
+                    Console.WriteLine($"Veículo  Placa: {veiculo[]}");
                 }
             }
             else
