@@ -3,14 +3,15 @@ namespace DesafioFundamentos.Models
 {
     public class Estacionamento
     {
-        private double precoInicial = 0;
-        private double precoPorHora = 0;
-        private List<string> veiculos = new List<string>();
+        private double precoInicial;
+        private double precoPorHora;
+        private List<string> veiculos;
 
         public Estacionamento(double precoInicial, double precoPorHora)
         {
             this.precoInicial = precoInicial;
             this.precoPorHora = precoPorHora;
+            this.veiculos = new List<string>();
         }
 
         public void AdicionarVeiculo()
